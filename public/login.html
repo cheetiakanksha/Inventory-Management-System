@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login | Secure Inventory</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main class="container">
+      <section class="panel auth-card">
+        <h1>Secure Inventory</h1>
+        <p class="subtitle">Sign in to continue</p>
+
+        <form id="loginForm" class="stack">
+          <input type="email" id="email" placeholder="Email" required />
+          <input type="password" id="password" placeholder="Password" required />
+          <button type="submit">Login</button>
+        </form>
+
+        <p class="auth-switch">No account? <a href="/register">Create one</a></p>
+        <div id="error" class="error hidden"></div>
+      </section>
+    </main>
+
+    <script type="module" src="/login.js"></script>
+  </body>
+</html>

@@ -1,0 +1,166 @@
+:root {
+  --bg: #f4f7f2;
+  --panel: #ffffff;
+  --text: #1f2a1f;
+  --muted: #5a655a;
+  --accent: #0e7a4b;
+  --danger: #b42318;
+  --border: #dbe2d8;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--text);
+  background: radial-gradient(circle at top right, #d9ece3, var(--bg));
+}
+
+.container {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+h1,
+h2,
+h3 {
+  margin-top: 0;
+}
+
+.subtitle {
+  color: var(--muted);
+}
+
+.panel {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 16px;
+  box-shadow: 0 8px 24px rgba(33, 56, 39, 0.08);
+}
+
+.auth-card {
+  max-width: 420px;
+  margin: 48px auto;
+}
+
+.auth-switch {
+  margin: 0;
+  color: var(--muted);
+}
+
+.panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.stack {
+  display: grid;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.grid-form {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  margin-bottom: 14px;
+}
+
+input,
+button {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  font-size: 14px;
+}
+
+button {
+  cursor: pointer;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+}
+
+button.secondary {
+  background: #52606d;
+}
+
+button.danger {
+  background: var(--danger);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+}
+
+th,
+td {
+  border-bottom: 1px solid var(--border);
+  text-align: left;
+  padding: 10px;
+  vertical-align: top;
+}
+
+.actions {
+  display: flex;
+  gap: 6px;
+}
+
+.error {
+  color: var(--danger);
+  margin-bottom: 12px;
+}
+
+.toast {
+  position: fixed;
+  bottom: 18px;
+  right: 18px;
+  background: var(--text);
+  color: #fff;
+  padding: 10px 14px;
+  border-radius: 8px;
+}
+
+.hidden {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 12px;
+  }
+
+  table,
+  thead,
+  tbody,
+  th,
+  td,
+  tr {
+    display: block;
+  }
+
+  thead {
+    display: none;
+  }
+
+  tr {
+    border: 1px solid var(--border);
+    margin-bottom: 10px;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  td {
+    border-bottom: 1px solid var(--border);
+  }
+}

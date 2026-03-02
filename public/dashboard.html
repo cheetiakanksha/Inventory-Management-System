@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard | Secure Inventory</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main class="container">
+      <header>
+        <h1>Secure Inventory Management</h1>
+        <p class="subtitle">Inventory dashboard for small and medium businesses</p>
+      </header>
+
+      <section class="panel">
+        <div class="panel-header">
+          <h2>Products</h2>
+          <button id="logoutBtn" class="danger">Logout</button>
+        </div>
+
+        <form id="productForm" class="grid-form">
+          <input type="hidden" id="productId" />
+          <input type="text" id="name" placeholder="Product name" required />
+          <input type="text" id="sku" placeholder="SKU (e.g. ITEM-001)" required />
+          <input type="number" id="price" placeholder="Price" min="0" step="0.01" required />
+          <input type="number" id="quantity" placeholder="Quantity" min="0" step="1" required />
+          <input type="text" id="description" placeholder="Description (optional)" />
+          <button type="submit" id="saveBtn">Save Product</button>
+          <button type="button" id="cancelEditBtn" class="secondary hidden">Cancel Edit</button>
+        </form>
+
+        <div id="loading" class="hidden">Loading...</div>
+        <div id="error" class="error hidden"></div>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>SKU</th>
+              <th>Price</th>
+              <th>Qty</th>
+              <th>Description</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="productTableBody"></tbody>
+        </table>
+      </section>
+
+      <div id="toast" class="toast hidden"></div>
+    </main>
+
+    <script type="module" src="/dashboard.js"></script>
+  </body>
+</html>
