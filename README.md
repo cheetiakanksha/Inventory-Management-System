@@ -53,6 +53,11 @@ inventory-backend/
 Detailed architecture and system design notes are in:
 - `docs/SYSTEM_DESIGN.md`
 
+## Live Deployment
+- GitHub Repo: `https://github.com/cheetiakanksha/Inventory-Management-System`
+- Live URL: `https://inventory-management-system-production-1cdc.up.railway.app`
+- Health check: `https://inventory-management-system-production-1cdc.up.railway.app/api/health`
+
 ## Setup
 1. Install dependencies:
 ```bash
@@ -78,10 +83,33 @@ npm run dev
 ```
 
 6. Open:
-- Login: `http://localhost:5000/login`
-- Register: `http://localhost:5000/register`
-- Dashboard: `http://localhost:5000/dashboard`
-- Health endpoint: `http://localhost:5000/api/health`
+- Login: `http://localhost:<PORT>/login`
+- Register: `http://localhost:<PORT>/register`
+- Dashboard: `http://localhost:<PORT>/dashboard`
+- Health endpoint: `http://localhost:<PORT>/api/health`
+
+## Railway Deployment
+1. Set service variables:
+- `DATABASE_URL=${{Postgres.DATABASE_URL}}`
+- `JWT_SECRET=<strong-random-secret>`
+- `NODE_ENV=production`
+- `CORS_ORIGIN=https://inventory-management-system-production-1cdc.up.railway.app`
+2. Build command:
+```bash
+npm install
+```
+3. Start command:
+```bash
+npx prisma migrate deploy && node src/server.js
+```
+4. Health check path:
+- `/api/health`
+
+## DNS Note (Local Machine)
+If your local DNS resolver cannot resolve Railway `*.up.railway.app` temporarily, a local hosts override can be used:
+```bash
+echo "151.101.66.15 inventory-management-system-production-1cdc.up.railway.app" | sudo tee -a /etc/hosts
+```
 
 ## Environment Variables
 - `NODE_ENV`: `development` | `production`

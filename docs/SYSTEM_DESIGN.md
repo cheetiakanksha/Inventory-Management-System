@@ -68,6 +68,8 @@ If `5000` is occupied, set another port in `.env` (example: `PORT=5051`).
 - Register page: `http://localhost:<PORT>/register`
 - Dashboard page: `http://localhost:<PORT>/dashboard`
 - Health endpoint: `http://localhost:<PORT>/api/health`
+- Live deployment: `https://inventory-management-system-production-1cdc.up.railway.app`
+- Live health endpoint: `https://inventory-management-system-production-1cdc.up.railway.app/api/health`
 
 ## 4. Why This Tech Stack
 
@@ -223,6 +225,11 @@ Client behavior:
 ### Migration Strategy
 - Versioned Prisma migrations under `prisma/migrations`
 - Deploy step runs `prisma migrate deploy` to avoid drift
+
+### Railway Runtime Commands
+- Build command: `npm install`
+- Start command: `npx prisma migrate deploy && node src/server.js`
+- Health check path: `/api/health`
 
 ### Health Monitoring
 - `/api/health` exposes liveness basics (`uptime`, timestamp)

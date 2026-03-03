@@ -5,10 +5,10 @@ Hi Team,
 Please find my completed technical assignment below.
 
 ## 1) GitHub Repository
-`https://github.com/<your-username>/<repo-name>`
+`https://github.com/cheetiakanksha/Inventory-Management-System`
 
 ## 2) Live/Deployed URL
-`https://<your-app>.up.railway.app`
+`https://inventory-management-system-production-1cdc.up.railway.app`
 
 ## 3) API Documentation / Postman Collection
 - API documentation: `README.md`
@@ -18,8 +18,8 @@ Please find my completed technical assignment below.
 ## 4) Steps to Run Locally
 1. Clone repository
 ```bash
-git clone https://github.com/<your-username>/<repo-name>.git
-cd <repo-name>
+git clone https://github.com/cheetiakanksha/Inventory-Management-System.git
+cd Inventory-Management-System
 ```
 
 2. Install dependencies
@@ -52,5 +52,10 @@ npm run dev
 - Register: `http://localhost:<PORT>/register`
 - Dashboard: `http://localhost:<PORT>/dashboard`
 - Health API: `http://localhost:<PORT>/api/health`
+
+## Deployment Notes (Railway)
+- Build command: `npm install`
+- Start command: `npx prisma migrate deploy && node src/server.js`
+- Health check path: `/api/health`
 
 Thank you for your time and review.
